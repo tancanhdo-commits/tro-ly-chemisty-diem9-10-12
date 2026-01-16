@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 /* ================== TYPES ================== */
+
 type Lesson = { name: string };
 type Chapter = { name: string; lessons: Lesson[] };
 
@@ -15,8 +16,9 @@ type ExamQuestion = {
 };
 
 /* ================== DATA HÓA ================== */
+
 const chemistryData: Record<string, Chapter[]> = {
-    "10": [
+  "10": [
     {
       name: "Chương 1. Cấu tạo nguyên tử",
       lessons: [
@@ -206,7 +208,9 @@ const chemistryData: Record<string, Chapter[]> = {
     }
   ]
 };
-/* ================== UI COMPONENT ================== */
+
+/* ================== UI COMPONENTS ================== */
+
 function Card({
   title,
   children
@@ -232,7 +236,6 @@ function Card({
   );
 }
 
-/* ================== QUESTION WITH REAL HINTS UI ================== */
 function QuestionWithHint({ q }: { q: ExamQuestion }) {
   const [open, setOpen] = useState(false);
 
@@ -296,6 +299,7 @@ function QuestionWithHint({ q }: { q: ExamQuestion }) {
 }
 
 /* ================== MAIN PAGE ================== */
+
 export default function Page() {
   const [grade, setGrade] = useState<number | null>(null);
   const [chapterIndex, setChapterIndex] = useState<number | null>(null);
@@ -363,7 +367,7 @@ Tạo 3 câu hỏi TN THPT có mức độ Easy–Medium–Hard.
     background: "#ffffff",
     color: "#0b0f2a",
     cursor: "pointer"
-  };
+  } as const;
 
   return (
     <main
@@ -493,26 +497,17 @@ Tạo 3 câu hỏi TN THPT có mức độ Easy–Medium–Hard.
             ))}
           </div>
         )}
+
+        <style jsx global>{`
+          select option {
+            background: #1a237e;
+            color: #ff1744;
+          }
+          select option:hover {
+            background: #283593;
+          }
+        `}</style>
       </div>
     </main>
   );
 }
-🚀 Generate Worksheet
-            </button>
-          </Card>
-        )}
-      </div>
-
-      <style jsx global>{`
-        select option {
-          background: #1a237e;
-          color: #ff1744;
-        }
-        select option:hover {
-          background: #283593;
-        }
-      `}</style>
-    </main>
-  );
-}
-
