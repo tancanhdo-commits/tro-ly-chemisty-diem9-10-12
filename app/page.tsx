@@ -497,3 +497,22 @@ Tạo 3 câu hỏi TN THPT có mức độ Easy–Medium–Hard.
     </main>
   );
 }
+🚀 Generate Worksheet
+            </button>
+          </Card>
+        )}
+      </div>
+
+      <style jsx global>{`
+        select option {
+          background: #1a237e;
+          color: #ff1744;
+        }
+        select option:hover {
+          background: #283593;
+        }
+      `}</style>
+    </main>
+  );
+}
+
