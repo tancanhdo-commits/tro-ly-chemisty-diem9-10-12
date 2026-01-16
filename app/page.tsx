@@ -461,7 +461,10 @@ Tạo 3 câu hỏi TN THPT có mức độ Easy–Medium–Hard.
             </label>
 
             <button
-              onClick={handleGenerate}
+              onClick={() => {
+                window.open("https://www.canva.com/ai/code", "_blank");
+                handleGenerate();
+              }}
               style={{
                 marginTop: 20,
                 width: "100%",
